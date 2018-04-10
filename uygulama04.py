@@ -1,4 +1,4 @@
-__author__="Mehmet ALTAY & Sercan BAYTEMUR"
+__author__="Mehmet ALTAY"
 isim=input("Erkek İsmi Giriniz..:")
 isimle=input("Kadın İsmi Giriniz..:")
 mısra=input("1 ve 8 Arasında Mısra Sayısı Giriniz..:")
