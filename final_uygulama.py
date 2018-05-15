@@ -1,7 +1,6 @@
 from tkinter import *
 import random
 import time
-
 pencere=Tk()
 pencere.resizable(width=FALSE, height=FALSE)
 etiket=pencere.title("Simon Oyunu")
@@ -36,8 +35,6 @@ def doldur2():
         Label(pencere, text="Seviye "+str(seviye),font="Times 18 bold").grid(row=0, column=0, sticky=W)
         if len(listeOlusan) + 1 > seviye-1:
             basla()
-
-
         else:
             print("hata")
     if len(listeSecilen1) == len(listeOlusan):
@@ -54,7 +51,6 @@ def doldur3():
         Label(pencere, text="Seviye "+str(seviye),font="Times 18 bold").grid(row=0, column=0, sticky=W)
         if len(listeOlusan) + 1 > seviye-1:
             basla()
-
         else:
             print("hata")
     if len(listeSecilen1) == len(listeOlusan):
@@ -65,14 +61,12 @@ def doldur3():
             pencere.after(2000, pencere.destroy)
             Label(yenipencere, text= "Hatalı seçim yaptınız. \n \n Skorunuz=" + str(seviye-2)).grid(padx=100, pady=25)
 
-
 def doldur4():
     listeOlusan.append("red")
     if listeOlusan==listeSecilen1:
         Label(pencere, text="Seviye "+str(seviye),font="Times 18 bold").grid(row=0, column=0, sticky=W)
         if len(listeOlusan) + 1 > seviye-1:
             basla()
-
         else:
             print("hata")
     if len(listeSecilen1) == len(listeOlusan):
@@ -91,7 +85,6 @@ def green():
     pencere.update()
     time.sleep(1)
     butonGreen.configure(bg="green")
-
 def yellow():
     pencere.update()
     time.sleep(1)
@@ -100,7 +93,6 @@ def yellow():
     pencere.update()
     time.sleep(1)
     butonYellow.configure(bg="yellow")
-
 def blue():
     pencere.update()
     time.sleep(1)
@@ -109,7 +101,6 @@ def blue():
     pencere.update()
     time.sleep(1)
     butonBlue.configure(bg="blue")
-
 def red():
     pencere.update()
     time.sleep(1)
@@ -119,21 +110,18 @@ def red():
     time.sleep(1)
     butonRed.configure(bg="red")
 
+
 def göster():
     for x in listeSecilen:
-
         if "red" in listeSecilen:
             red()
             listeSecilen.pop(0)
-
         if "blue" in listeSecilen:
             blue()
             listeSecilen.pop(0)
-
         if "yellow" in listeSecilen:
             yellow()
             listeSecilen.pop(0)
-
         if "green" in listeSecilen:
             green()
             listeSecilen.pop(0)
@@ -153,13 +141,8 @@ def basla():
         listeSecilen1.append(secilen)
         göster()
         i +=1
-
-
     seviye +=1
     butonNormal()
-
-
-
 
 
 butonGreen = Button(pencere, height=10, width=15, bg="green", command=doldur1)
@@ -172,14 +155,13 @@ butonRed=Button(pencere ,height=10,width=15,bg="red",command=doldur4)
 butonRed.grid(row=2,column=1)
 butonBasla = Button(pencere, text="Oyna",font="Times 16 bold",width=9,command=basla)
 butonBasla.grid(row=0, column=1, sticky=E)
-Label(pencere, text="Seviye  "+str(seviye),font="Times 18 bold").grid(row=0, column=0, sticky=W)
+Label(pencere, text="Seviye "+str(seviye),font="Times 18 bold").grid(row=0, column=0, sticky=W)
 
 def butonNormal():
     butonGreen["state"] = NORMAL
     butonYellow["state"] = NORMAL
     butonBlue["state"] = NORMAL
     butonRed["state"] = NORMAL
-
 def butonDisabled():
     butonGreen["state"] = DISABLED
     butonYellow["state"] = DISABLED
@@ -187,6 +169,4 @@ def butonDisabled():
     butonRed["state"] = DISABLED
 
 butonDisabled()
-
-
 mainloop()
